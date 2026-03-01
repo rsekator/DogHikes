@@ -49,17 +49,10 @@
       flex-shrink: 0;
     }
 
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.3px; }
     header p  { font-size: .78rem; opacity: .85; margin-top: 2px; }
 
-    /* ── View Toggle ─────────────────────────────────── */
     .view-toggle {
       display: flex;
       background: rgba(255,255,255,.18);
@@ -173,35 +166,13 @@
 
     .stats span { display: flex; align-items: center; gap: 4px; }
 
-    .progress-wrap {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-left: auto;
-    }
+    .progress-wrap { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 
-    .progress-bar {
-      width: 64px;
-      height: 5px;
-      background: var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: var(--green);
-      border-radius: 3px;
-      transition: width .4s ease;
-    }
+    .progress-bar { width: 64px; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width .4s ease; }
 
     /* ── Map ────────────────────────────────────────── */
-    #map {
-      flex: 1;
-      min-height: 300px;
-      z-index: 1;
-    }
-
+    #map { flex: 1; min-height: 300px; z-index: 1; }
     #map.hidden { display: none; }
 
     .dog-marker {
@@ -216,10 +187,10 @@
       transition: transform .1s;
     }
 
-    .dog-marker:hover  { transform: scale(1.15); }
-    .dog-marker.off    { background: var(--green); }
-    .dog-marker.on     { background: var(--amber); }
-    .dog-marker.done   { opacity: .55; filter: grayscale(.4); }
+    .dog-marker:hover { transform: scale(1.15); }
+    .dog-marker.off   { background: var(--green); }
+    .dog-marker.on    { background: var(--amber); }
+    .dog-marker.done  { opacity: .55; filter: grayscale(.4); }
 
     /* Leaflet popup */
     .leaflet-popup-content-wrapper {
@@ -231,23 +202,28 @@
 
     .leaflet-popup-content { margin: 0 !important; width: 268px !important; }
 
-    .popup-body { padding: 14px; }
+    /* Popup image */
+    .popup-photo {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
 
-    .popup-header {
+    .popup-photo-placeholder {
+      width: 100%;
+      height: 150px;
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 8px;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
     }
 
-    .popup-title {
-      font-size: .92rem;
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--text);
-      flex: 1;
-    }
+    .popup-body { padding: 12px 14px 14px; }
+
+    .popup-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+
+    .popup-title { font-size: .92rem; font-weight: 700; line-height: 1.3; color: var(--text); flex: 1; }
 
     .popup-badge {
       flex-shrink: 0;
@@ -265,42 +241,17 @@
     .popup-badge.off { background: var(--green-lt); color: var(--green); }
     .popup-badge.on  { background: var(--amber-lt); color: var(--amber); }
 
-    .popup-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: .75rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
+    .popup-meta { display: flex; flex-wrap: wrap; gap: 8px; font-size: .75rem; color: var(--text-muted); margin-bottom: 8px; }
     .popup-diff { padding: 1px 7px; border-radius: 5px; font-size: .7rem; font-weight: 600; }
 
     .diff-easy     { background: #e8f5e9; color: #2e7d32; }
     .diff-moderate { background: #fff3e0; color: #e65100; }
     .diff-hard     { background: #ffebee; color: #c62828; }
 
-    .popup-notes {
-      font-size: .75rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      border-top: 1px solid var(--border);
-      padding-top: 8px;
-      margin-bottom: 10px;
-    }
+    .popup-notes { font-size: .75rem; color: var(--text-muted); line-height: 1.5; border-top: 1px solid var(--border); padding-top: 8px; margin-bottom: 10px; }
 
-    .popup-region {
-      font-size: .68rem;
-      color: var(--blue);
-      background: var(--blue-lt);
-      padding: 2px 7px;
-      border-radius: 5px;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
+    .popup-region { font-size: .68rem; color: var(--blue); background: var(--blue-lt); padding: 2px 7px; border-radius: 5px; font-weight: 600; display: inline-block; margin-bottom: 8px; }
 
-    /* Popup check button */
     .popup-check-btn {
       width: 100%;
       padding: 8px;
@@ -319,23 +270,13 @@
     }
 
     .popup-check-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-lt); }
-
-    .popup-check-btn.checked {
-      background: var(--green-lt);
-      border-color: var(--green);
-      color: var(--green);
-    }
+    .popup-check-btn.checked { background: var(--green-lt); border-color: var(--green); color: var(--green); }
 
     /* ── Card grid ──────────────────────────────────── */
     #list-view { flex: 1; overflow-y: auto; }
     #list-view.hidden { display: none; }
 
-    .grid {
-      padding: 4px 16px 32px;
-      display: grid;
-      gap: 14px;
-      grid-template-columns: 1fr;
-    }
+    .grid { padding: 4px 16px 32px; display: grid; gap: 14px; grid-template-columns: 1fr; }
 
     @media (min-width: 640px)  { .grid { grid-template-columns: 1fr 1fr; } }
     @media (min-width: 1024px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
@@ -355,23 +296,36 @@
     .card:active { transform: scale(.98); }
     .card.done   { border-color: var(--green-mid); }
 
-    /* Thumbnail */
-    .card-thumb-wrap {
-      position: relative;
-      width: 100%;
-      height: 130px;
-    }
+    .card-thumb-wrap { position: relative; width: 100%; height: 150px; overflow: hidden; }
 
-    .card-thumb-placeholder {
+    /* Real photo */
+    .card-thumb-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .card-thumb-img.loaded { opacity: 1; }
+
+    /* Emoji placeholder (shows while photo loads) */
+    .card-thumb-placeholder {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
+      transition: opacity .4s ease;
     }
 
-    /* Done overlay on thumbnail */
+    .card-thumb-placeholder.hidden { opacity: 0; pointer-events: none; }
+
+    /* Done overlay */
     .card-done-overlay {
       display: none;
       position: absolute;
@@ -379,6 +333,7 @@
       background: rgba(45, 125, 70, .38);
       align-items: center;
       justify-content: center;
+      z-index: 2;
     }
 
     .card.done .card-done-overlay { display: flex; }
@@ -397,15 +352,9 @@
       box-shadow: 0 2px 8px rgba(0,0,0,.25);
     }
 
-    /* Card body */
     .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
 
-    .card-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 8px;
-    }
+    .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
 
     .card-title {
       font-size: 1rem;
@@ -433,14 +382,7 @@
     .badge-off { background: var(--green-lt); color: var(--green); }
     .badge-on  { background: var(--amber-lt); color: var(--amber); }
 
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: .8rem;
-      color: var(--text-muted);
-    }
-
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; font-size: .8rem; color: var(--text-muted); }
     .meta span { display: flex; align-items: center; gap: 4px; }
 
     .diff { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: .75rem; font-weight: 600; }
@@ -448,28 +390,10 @@
     .diff-moderate { background: #fff3e0; color: #e65100; }
     .diff-hard     { background: #ffebee; color: #c62828; }
 
-    .notes {
-      font-size: .82rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      border-top: 1px solid var(--border);
-      padding-top: 8px;
-      margin-top: 2px;
-    }
+    .notes { font-size: .82rem; color: var(--text-muted); line-height: 1.5; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 2px; }
 
-    .region-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: .72rem;
-      color: var(--blue);
-      background: var(--blue-lt);
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
+    .region-pill { display: inline-flex; align-items: center; gap: 4px; font-size: .72rem; color: var(--blue); background: var(--blue-lt); padding: 2px 8px; border-radius: 6px; font-weight: 600; }
 
-    /* ── Check button ────────────────────────────────── */
     .check-btn {
       margin-top: 4px;
       padding: 9px 12px;
@@ -488,34 +412,18 @@
       width: 100%;
     }
 
-    .check-btn:hover {
-      border-color: var(--green);
-      color: var(--green);
-      background: var(--green-lt);
-    }
-
-    .check-btn.checked {
-      background: var(--green-lt);
-      border-color: var(--green);
-      color: var(--green);
-    }
+    .check-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-lt); }
+    .check-btn.checked { background: var(--green-lt); border-color: var(--green); color: var(--green); }
 
     /* ── Empty state ─────────────────────────────────── */
-    .empty {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-muted);
-    }
-
+    .empty { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-muted); }
     .empty svg { opacity: .3; margin-bottom: 12px; }
     .empty p   { font-size: 1.05rem; }
 
     /* ── Map legend ──────────────────────────────────── */
     .map-legend {
       position: absolute;
-      bottom: 28px;
-      left: 10px;
+      bottom: 28px; left: 10px;
       z-index: 800;
       background: #fff;
       border-radius: 10px;
@@ -531,23 +439,23 @@
 
     .legend-item { display: flex; align-items: center; gap: 7px; font-weight: 600; }
 
-    .legend-dot {
-      width: 14px; height: 14px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      box-shadow: 0 1px 4px rgba(0,0,0,.25);
-      flex-shrink: 0;
+    .legend-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.25); flex-shrink: 0; }
+
+    /* ── Photo credit ─────────────────────────────────── */
+    .photo-credit {
+      position: absolute;
+      bottom: 4px; right: 6px;
+      font-size: .58rem;
+      color: rgba(255,255,255,.8);
+      background: rgba(0,0,0,.35);
+      padding: 1px 5px;
+      border-radius: 3px;
+      z-index: 3;
+      pointer-events: none;
     }
 
     /* ── Footer ──────────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 14px;
-      font-size: .72rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-      flex-shrink: 0;
-    }
+    footer { text-align: center; padding: 14px; font-size: .72rem; color: var(--text-muted); border-top: 1px solid var(--border); flex-shrink: 0; }
   </style>
 </head>
 <body>
@@ -597,7 +505,6 @@
 
 <div class="stats" id="stats"></div>
 
-<!-- Map view -->
 <div id="map" class="hidden">
   <div class="map-legend">
     <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Off-Leash</div>
@@ -606,24 +513,24 @@
   </div>
 </div>
 
-<!-- List view -->
 <div id="list-view">
   <main class="grid" id="grid"></main>
   <footer>
     Always verify current regulations before your visit — rules can change seasonally.<br>
     Data compiled from MROSD, GGNRA, East Bay Regional Parks, and county parks resources.
+    Photos via Wikipedia / Wikimedia Commons (CC).
   </footer>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const HIKES = [
-  // ── OFF-LEASH ─────────────────────────────────────────────────────────────
   {
     name: "Redwood Regional Park – Stream Trail",
     region: "East Bay", city: "Oakland",
     leash: "off", distance: "8.4 mi", elevation: "1,200 ft", difficulty: "moderate",
     emoji: "🌲", lat: 37.8209, lng: -122.1575,
+    wiki: "Redwood Regional Park",
     notes: "Designated off-leash areas in the park's west side. Dogs must be under voice control. Leash required on Skyline Gate staging area trails and near the creek.",
     tags: ["redwood", "oakland", "creek", "shade"]
   },
@@ -632,6 +539,7 @@ const HIKES = [
     region: "East Bay", city: "Richmond",
     leash: "off", distance: "2.5 mi", elevation: "50 ft", difficulty: "easy",
     emoji: "🌊", lat: 37.9077, lng: -122.3344,
+    wiki: "Point Isabel Regional Shoreline",
     notes: "The most popular off-leash dog park in the Bay Area. Flat shoreline loop, stunning Bay views, dog wash station on-site. Get there early on weekends.",
     tags: ["bay", "richmond", "flat", "shoreline", "popular"]
   },
@@ -640,6 +548,7 @@ const HIKES = [
     region: "East Bay", city: "Berkeley",
     leash: "off", distance: "6.0 mi", elevation: "900 ft", difficulty: "moderate",
     emoji: "🏞️", lat: 37.8946, lng: -122.2446,
+    wiki: "Tilden Regional Park",
     notes: "Off-leash allowed on many trails within Tilden. Voice control required. Leash required near Little Farm and Environmental Education Center.",
     tags: ["berkeley", "hills", "wildcat", "views"]
   },
@@ -648,6 +557,7 @@ const HIKES = [
     region: "East Bay", city: "Oakland",
     leash: "off", distance: "3.8 mi", elevation: "600 ft", difficulty: "easy",
     emoji: "🌋", lat: 37.8455, lng: -122.2021,
+    wiki: "Sibley Volcanic Regional Preserve",
     notes: "Off-leash trails through volcanic rock formations and oak woodland. Great ridge views. Keep dogs away from grazing areas.",
     tags: ["oakland", "volcanic", "oak", "ridge"]
   },
@@ -656,6 +566,7 @@ const HIKES = [
     region: "East Bay", city: "Pleasanton",
     leash: "off", distance: "2.0 mi", elevation: "80 ft", difficulty: "easy",
     emoji: "💧", lat: 37.6604, lng: -121.8547,
+    wiki: "Shadow Cliffs Regional Recreation Area",
     notes: "Off-leash dog swim area adjacent to the lake. Dogs can splash and swim in designated zone. Flat, easy loop.",
     tags: ["pleasanton", "swim", "lake", "flat"]
   },
@@ -664,6 +575,7 @@ const HIKES = [
     region: "East Bay", city: "Danville / San Ramon",
     leash: "off", distance: "7.2 mi", elevation: "1,500 ft", difficulty: "hard",
     emoji: "⛰️", lat: 37.8155, lng: -121.9498,
+    wiki: "Las Trampas Regional Wilderness",
     notes: "Voice-control off-leash in most areas. Rugged terrain with panoramic Bay views. Watch for rattlesnakes in summer.",
     tags: ["danville", "wilderness", "views", "rugged"]
   },
@@ -672,6 +584,7 @@ const HIKES = [
     region: "East Bay", city: "Fremont",
     leash: "off", distance: "5.8 mi", elevation: "2,150 ft", difficulty: "hard",
     emoji: "🏔️", lat: 37.5131, lng: -121.8805,
+    wiki: "Mission Peak Regional Preserve",
     notes: "Off-leash allowed on trail with voice control. Iconic summit with 360° views. Very exposed — bring lots of water for you and your dog.",
     tags: ["fremont", "peak", "summit", "hard", "views"]
   },
@@ -680,6 +593,7 @@ const HIKES = [
     region: "East Bay", city: "Martinez",
     leash: "off", distance: "5.5 mi", elevation: "800 ft", difficulty: "moderate",
     emoji: "🌾", lat: 37.9284, lng: -122.1360,
+    wiki: "Briones Regional Park",
     notes: "Off-leash on most trails. Rolling oak-savanna hills, seasonal wildflowers, and cattle (leash near livestock). Popular with dog owners.",
     tags: ["martinez", "oak", "savanna", "wildflowers"]
   },
@@ -688,6 +602,7 @@ const HIKES = [
     region: "East Bay", city: "Fremont",
     leash: "off", distance: "4.5 mi", elevation: "300 ft", difficulty: "easy",
     emoji: "🐦", lat: 37.5582, lng: -122.0551,
+    wiki: "Coyote Hills Regional Park",
     notes: "Off-leash on grass areas and some trails. Baylands marshes, bird watching, and bay views. Leash required near the visitor center.",
     tags: ["fremont", "marshland", "birds", "bay"]
   },
@@ -696,6 +611,7 @@ const HIKES = [
     region: "East Bay", city: "Fremont / Union City",
     leash: "off", distance: "12.0 mi (one-way)", elevation: "200 ft", difficulty: "easy",
     emoji: "🚶", lat: 37.5680, lng: -122.0140,
+    wiki: "Alameda Creek",
     notes: "South side of the trail is off-leash. Long, mostly flat paved trail along the creek. Great for long distance walks.",
     tags: ["fremont", "creek", "flat", "paved", "long"]
   },
@@ -704,6 +620,7 @@ const HIKES = [
     region: "East Bay", city: "Pleasanton",
     leash: "off", distance: "8.0 mi", elevation: "1,600 ft", difficulty: "hard",
     emoji: "🌄", lat: 37.6531, lng: -121.8870,
+    wiki: "Pleasanton Ridge Regional Park",
     notes: "Off-leash allowed throughout. Oak-covered ridges with sweeping Tri-Valley views. Little shade in summer — go early.",
     tags: ["pleasanton", "ridge", "oak", "views", "trivalley"]
   },
@@ -712,15 +629,16 @@ const HIKES = [
     region: "East Bay", city: "Livermore",
     leash: "off", distance: "5.0 mi", elevation: "900 ft", difficulty: "moderate",
     emoji: "🌿", lat: 37.7710, lng: -121.8067,
+    wiki: "Morgan Territory Regional Preserve",
     notes: "Secluded off-leash park with wildflowers in spring. One of the least-crowded East Bay parks. No water — bring plenty.",
     tags: ["livermore", "wildflowers", "secluded", "spring"]
   },
-  // ── ON-LEASH ──────────────────────────────────────────────────────────────
   {
     name: "Muir Woods Connector – Bootjack Trail",
     region: "Marin", city: "Mill Valley",
     leash: "on", distance: "4.0 mi", elevation: "1,100 ft", difficulty: "moderate",
     emoji: "🌳", lat: 37.8970, lng: -122.5727,
+    wiki: "Muir Woods National Monument",
     notes: "Dogs on leash allowed on the Bootjack and Camp Alice Eastwood trails just outside the Muir Woods boundary. No dogs inside Muir Woods itself.",
     tags: ["marin", "redwood", "bootjack", "millvalley"]
   },
@@ -729,6 +647,7 @@ const HIKES = [
     region: "Marin", city: "Mill Valley",
     leash: "on", distance: "4.0 mi", elevation: "350 ft", difficulty: "easy",
     emoji: "🏖️", lat: 37.8600, lng: -122.5285,
+    wiki: "Marin Headlands",
     notes: "Leash required on this GGNRA trail. Flat, paved to gravel path through a scenic valley to a secluded beach. Very popular — go on weekdays.",
     tags: ["marin", "beach", "ggnra", "flat", "millvalley"]
   },
@@ -737,6 +656,7 @@ const HIKES = [
     region: "Marin", city: "Mill Valley",
     leash: "on", distance: "7.5 mi", elevation: "1,900 ft", difficulty: "hard",
     emoji: "🗻", lat: 37.9235, lng: -122.5966,
+    wiki: "Mount Tamalpais State Park",
     notes: "Leash required on all Mt. Tam State Park trails. Spectacular coastal views, old-growth redwoods in Steep Ravine. One of Marin's best hikes.",
     tags: ["marin", "tamalpais", "coastal", "redwood", "statepark"]
   },
@@ -745,6 +665,7 @@ const HIKES = [
     region: "Peninsula", city: "Pacifica / San Bruno",
     leash: "on", distance: "5.0 mi", elevation: "1,000 ft", difficulty: "moderate",
     emoji: "🌫️", lat: 37.6183, lng: -122.4695,
+    wiki: "Sweeney Ridge",
     notes: "Leash required. Sweeping 360° views of the Bay, ocean, and San Francisco on clear days. Often foggy and windy — great for hot days.",
     tags: ["pacifica", "peninsula", "ggnra", "views", "coastal"]
   },
@@ -753,6 +674,7 @@ const HIKES = [
     region: "Peninsula", city: "Pacifica",
     leash: "on", distance: "2.5 mi", elevation: "480 ft", difficulty: "easy",
     emoji: "🌊", lat: 37.6098, lng: -122.4986,
+    wiki: "Mori Point",
     notes: "Leash required on most of the trail. Short, stunning blufftop walk with ocean views and beach access below. Watch for GPCR butterfly habitat zones.",
     tags: ["pacifica", "ocean", "blufftop", "ggnra"]
   },
@@ -761,6 +683,7 @@ const HIKES = [
     region: "Peninsula", city: "Half Moon Bay",
     leash: "on", distance: "6.5 mi", elevation: "1,600 ft", difficulty: "moderate",
     emoji: "🌲", lat: 37.4341, lng: -122.3770,
+    wiki: "Purisima Creek Redwoods Open Space Preserve",
     notes: "Leash required on MROSD preserve. Lush second-growth redwoods and coastal scrub. Trail descends to coastal blufftops. Can be muddy in winter.",
     tags: ["halfmoonbay", "redwood", "mrosd", "coastal", "peninsula"]
   },
@@ -769,6 +692,7 @@ const HIKES = [
     region: "Peninsula", city: "Palo Alto / Portola Valley",
     leash: "on", distance: "5.5 mi", elevation: "750 ft", difficulty: "moderate",
     emoji: "🌾", lat: 37.3574, lng: -122.2128,
+    wiki: "Coal Creek Open Space Preserve",
     notes: "Leash required on MROSD land. Rolling grasslands with bay views. Part of a larger trail network connecting to Russian Ridge.",
     tags: ["paloalto", "portolovalley", "mrosd", "grassland"]
   },
@@ -777,6 +701,7 @@ const HIKES = [
     region: "Peninsula", city: "Palo Alto",
     leash: "on", distance: "5.5 mi", elevation: "900 ft", difficulty: "moderate",
     emoji: "🌺", lat: 37.3543, lng: -122.2333,
+    wiki: "Russian Ridge Open Space Preserve",
     notes: "Leash required. One of the best wildflower displays in the Bay Area in spring. Exposed ridge with Bay and ocean views. Breezy year-round.",
     tags: ["paloalto", "mrosd", "wildflowers", "ridge", "spring"]
   },
@@ -785,6 +710,7 @@ const HIKES = [
     region: "Peninsula", city: "Portola Valley",
     leash: "on", distance: "8.0 mi", elevation: "1,200 ft", difficulty: "hard",
     emoji: "💨", lat: 37.3757, lng: -122.2230,
+    wiki: "Windy Hill Open Space Preserve",
     notes: "Leash required on MROSD land. Open grasslands and forested trails with sweeping Bay views. Very windy on the summit — hence the name.",
     tags: ["portolovalley", "mrosd", "views", "windy"]
   },
@@ -793,6 +719,7 @@ const HIKES = [
     region: "South Bay", city: "Cupertino / Los Altos",
     leash: "on", distance: "6.0 mi", elevation: "1,000 ft", difficulty: "moderate",
     emoji: "🐄", lat: 37.3275, lng: -122.0773,
+    wiki: "Rancho San Antonio Open Space Preserve",
     notes: "Leash required. One of the most visited open spaces in Santa Clara County. Farm area with deer, creeks, and forested canyons.",
     tags: ["cupertino", "losaltos", "mrosd", "farm", "creek"]
   },
@@ -801,6 +728,7 @@ const HIKES = [
     region: "South Bay", city: "San Jose",
     leash: "on", distance: "7.0 mi", elevation: "1,300 ft", difficulty: "moderate",
     emoji: "⛏️", lat: 37.1829, lng: -121.8785,
+    wiki: "Almaden Quicksilver County Park",
     notes: "Leash required. Fascinating mining history ruins throughout the park. Oak woodlands, chaparral, and reservoir views. Less crowded than MROSD parks.",
     tags: ["sanjose", "mining", "history", "oak", "reservoir"]
   },
@@ -809,6 +737,7 @@ const HIKES = [
     region: "South Bay", city: "Palo Alto",
     leash: "on", distance: "5.5 mi", elevation: "600 ft", difficulty: "easy",
     emoji: "🌻", lat: 37.3651, lng: -122.1336,
+    wiki: "Arastradero Preserve",
     notes: "Leash required. Rolling hills, a large seasonal lake, wildflowers, and wildlife corridors. Family and dog friendly. Connects to Pearson-Arastradero.",
     tags: ["paloalto", "lake", "wildlife", "wildflowers"]
   },
@@ -817,6 +746,7 @@ const HIKES = [
     region: "South Bay", city: "Palo Alto",
     leash: "on", distance: "5.0 mi", elevation: "1,200 ft", difficulty: "hard",
     emoji: "🏔️", lat: 37.3218, lng: -122.2188,
+    wiki: "Monte Bello Open Space Preserve",
     notes: "Leash required on MROSD land. Straddles the San Andreas Fault. Cool forest canyons and open ridge with incredible views. Challenging but rewarding.",
     tags: ["paloalto", "mrosd", "sanandreas", "forest", "ridge"]
   },
@@ -825,6 +755,7 @@ const HIKES = [
     region: "Peninsula", city: "Woodside",
     leash: "on", distance: "6.0 mi", elevation: "1,000 ft", difficulty: "moderate",
     emoji: "🌲", lat: 37.4388, lng: -122.2788,
+    wiki: "Huddart County Park",
     notes: "Leash required in San Mateo County parks. Beautiful redwood and Douglas fir forest. Multiple loop options. Cool even in summer.",
     tags: ["woodside", "redwood", "cool", "forest", "sanmateo"]
   },
@@ -833,6 +764,7 @@ const HIKES = [
     region: "Peninsula", city: "Pacifica / Montara",
     leash: "on", distance: "7.0 mi", elevation: "1,900 ft", difficulty: "hard",
     emoji: "🌊", lat: 37.5438, lng: -122.5126,
+    wiki: "McNee Ranch State Park",
     notes: "Leash required. Rugged coastal trail to sweeping Pacific and Bay views. Wildflowers in spring. Often foggy — bring layers.",
     tags: ["pacifica", "montara", "coastal", "views", "rugged"]
   },
@@ -841,6 +773,7 @@ const HIKES = [
     region: "Marin", city: "Sausalito",
     leash: "on", distance: "3.5 mi", elevation: "400 ft", difficulty: "easy",
     emoji: "🏖️", lat: 37.8312, lng: -122.5389,
+    wiki: "Marin Headlands",
     notes: "Leash required on GGNRA trails. Dramatic coastal scenery, dramatic rock formations on Rodeo Beach. Dogs allowed on beach on leash.",
     tags: ["marin", "ggnra", "coastal", "beach", "sausalito"]
   },
@@ -849,6 +782,7 @@ const HIKES = [
     region: "Marin", city: "San Rafael",
     leash: "on", distance: "8.5 mi", elevation: "1,000 ft", difficulty: "moderate",
     emoji: "🦀", lat: 37.9777, lng: -122.4734,
+    wiki: "China Camp State Park",
     notes: "Leash required in California State Parks. Bayshore trails with tidal marsh and oak woodland. Historic Chinese fishing village ruins on the waterfront.",
     tags: ["marin", "sanrafael", "statepark", "bayshore", "history"]
   },
@@ -857,6 +791,7 @@ const HIKES = [
     region: "Marin", city: "Fairfax",
     leash: "on", distance: "5.5 mi", elevation: "500 ft", difficulty: "easy",
     emoji: "💧", lat: 37.9311, lng: -122.6027,
+    wiki: "Bon Tempe Lake",
     notes: "Leash required in MMWD lands. Gorgeous lake views and riparian habitat. Shaded trail perfect for warm days. No swimming allowed.",
     tags: ["fairfax", "marin", "lake", "shaded", "mmwd"]
   },
@@ -865,6 +800,7 @@ const HIKES = [
     region: "San Francisco", city: "San Francisco",
     leash: "on", distance: "2.0 mi", elevation: "400 ft", difficulty: "easy",
     emoji: "✝️", lat: 37.7408, lng: -122.4532,
+    wiki: "Mount Davidson (San Francisco)",
     notes: "Leash required. SF's highest peak at 938 ft. Dense eucalyptus and cypress forest — a hidden urban escape. Summit cross visible from many neighborhoods.",
     tags: ["sf", "sanfrancisco", "urban", "forest", "summit"]
   },
@@ -873,6 +809,7 @@ const HIKES = [
     region: "San Francisco", city: "San Francisco",
     leash: "on", distance: "1.5 mi", elevation: "280 ft", difficulty: "easy",
     emoji: "🌇", lat: 37.7428, lng: -122.4153,
+    wiki: "Bernal Heights, San Francisco",
     notes: "Part leash, part designated off-leash (the summit loop). Panoramic SF views. Very popular with dogs and their owners. Friendly community vibe.",
     tags: ["sf", "sanfrancisco", "views", "urban", "community"]
   },
@@ -881,6 +818,7 @@ const HIKES = [
     region: "South Bay", city: "San Jose",
     leash: "on", distance: "9.0 mi", elevation: "1,400 ft", difficulty: "hard",
     emoji: "🐎", lat: 37.1440, lng: -121.8538,
+    wiki: "Calero County Park",
     notes: "Leash required. Multi-use equestrian and hiking park with reservoir views. Rolling chaparral and oak woodland. Quiet and less crowded.",
     tags: ["sanjose", "equestrian", "reservoir", "oak", "chaparral"]
   },
@@ -889,6 +827,7 @@ const HIKES = [
     region: "South Bay", city: "San Jose",
     leash: "on", distance: "10.0 mi", elevation: "2,000 ft", difficulty: "hard",
     emoji: "🌄", lat: 37.3302, lng: -121.7439,
+    wiki: "Joseph D. Grant County Park",
     notes: "Leash required in Santa Clara County parks. Vast ranch land with seasonal wildflowers, deer, and panoramic South Bay views. Historic ranch buildings.",
     tags: ["sanjose", "ranch", "wildflowers", "views", "deer"]
   },
@@ -897,6 +836,7 @@ const HIKES = [
     region: "Peninsula", city: "Belmont",
     leash: "on", distance: "3.5 mi", elevation: "600 ft", difficulty: "easy",
     emoji: "🦆", lat: 37.5172, lng: -122.2950,
+    wiki: "Waterdog Lake and Open Space",
     notes: "Leash required. Lovely small lake surrounded by oak and eucalyptus. Easy loop with wildlife viewing. Great quick escape from the Peninsula suburbs.",
     tags: ["belmont", "lake", "oak", "wildlife", "easy"]
   },
@@ -905,34 +845,68 @@ const HIKES = [
     region: "Peninsula", city: "Redwood City",
     leash: "on", distance: "5.0 mi", elevation: "700 ft", difficulty: "moderate",
     emoji: "🌸", lat: 37.4813, lng: -122.2709,
+    wiki: "Edgewood County Park and Natural Preserve",
     notes: "Leash required. Exceptional wildflower preserve — serpentine grasslands with rare endemic species in spring. Please stay on trail to protect habitat.",
     tags: ["redwoodcity", "wildflowers", "serpentine", "spring", "preserve"]
   }
 ];
 
+// ── Photo cache ───────────────────────────────────────────────────────────────
+// Stores { url, title } or null per wiki key
+const photoCache = {};
+
+async function fetchWikiPhoto(wikiTitle) {
+  if (wikiTitle in photoCache) return photoCache[wikiTitle];
+  try {
+    const api = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(wikiTitle)}&prop=pageimages&format=json&origin=*&pithumbsize=800&piprop=thumbnail|name`;
+    const res  = await fetch(api);
+    const data = await res.json();
+    const page = Object.values(data.query.pages)[0];
+    const result = page?.thumbnail ? { url: page.thumbnail.source, title: page.pageimage || '' } : null;
+    photoCache[wikiTitle] = result;
+    return result;
+  } catch {
+    photoCache[wikiTitle] = null;
+    return null;
+  }
+}
+
+async function loadCardPhotos(filtered) {
+  await Promise.all(filtered.map(async h => {
+    if (!h.wiki) return;
+    const photo = await fetchWikiPhoto(h.wiki);
+    if (!photo) return;
+    // Find the card for this hike (may have been re-rendered, so re-query)
+    const card = document.querySelector(`.card[data-name="${CSS.escape(h.name)}"]`);
+    if (!card) return;
+    const img         = card.querySelector('.card-thumb-img');
+    const placeholder = card.querySelector('.card-thumb-placeholder');
+    if (!img || img.src) return; // already set
+    img.onload = () => {
+      img.classList.add('loaded');
+      if (placeholder) placeholder.classList.add('hidden');
+    };
+    img.src = photo.url;
+    img.alt = h.name;
+  }));
+}
+
 // ── Persistence ───────────────────────────────────────────────────────────────
 const STORAGE_KEY = "bayAreaDogHikesDone";
 
 function loadDone() {
-  try {
-    return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"));
-  } catch {
-    return new Set();
-  }
+  try { return new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]")); }
+  catch { return new Set(); }
 }
 
-function saveDone() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...done]));
-}
+function saveDone() { localStorage.setItem(STORAGE_KEY, JSON.stringify([...done])); }
 
 let done = loadDone();
 
 function toggleDone(name) {
-  if (done.has(name)) done.delete(name);
-  else done.add(name);
+  if (done.has(name)) done.delete(name); else done.add(name);
   saveDone();
   update();
-  // If map is open, refresh affected marker icon
   if (currentView === "map" && map) {
     const entry = markers.find(m => m.hike.name === name);
     if (entry) entry.marker.setIcon(makeIcon(entry.hike.leash, done.has(name)));
@@ -942,17 +916,16 @@ function toggleDone(name) {
 // ── State ─────────────────────────────────────────────────────────────────────
 let activeLeash = "all";
 let activeDiff  = null;
-let activeDone  = null;   // null | "hiked" | "todo"
+let activeDone  = null;
 let currentView = "list";
 let map         = null;
 let markers     = [];
 
-// ── Filter helper ─────────────────────────────────────────────────────────────
 function getFiltered() {
   const query = document.getElementById("search").value.toLowerCase().trim();
   return HIKES.filter(h => {
     const leashOk  = activeLeash === "all" || h.leash === activeLeash;
-    const diffOk   = !activeDiff  || h.difficulty === activeDiff;
+    const diffOk   = !activeDiff || h.difficulty === activeDiff;
     const doneOk   = !activeDone
       || (activeDone === "hiked" && done.has(h.name))
       || (activeDone === "todo"  && !done.has(h.name));
@@ -965,25 +938,22 @@ function getFiltered() {
   });
 }
 
-// ── Stats ─────────────────────────────────────────────────────────────────────
 function updateStats(filtered) {
-  const off      = filtered.filter(h => h.leash === "off").length;
-  const on       = filtered.filter(h => h.leash === "on").length;
-  const doneCount = done.size;
-  const pct       = Math.round((doneCount / HIKES.length) * 100);
-
+  const off = filtered.filter(h => h.leash === "off").length;
+  const on  = filtered.filter(h => h.leash === "on").length;
+  const pct = Math.round((done.size / HIKES.length) * 100);
   document.getElementById("stats").innerHTML = `
     <span>📍 ${filtered.length} trail${filtered.length !== 1 ? "s" : ""}</span>
     <span style="color:var(--green)">🟢 ${off} off-leash</span>
     <span style="color:var(--amber)">🟡 ${on} on-leash</span>
-    <span class="progress-wrap" title="${doneCount} of ${HIKES.length} hiked">
-      <span style="color:var(--green);font-weight:700">✓ ${doneCount}/${HIKES.length}</span>
+    <span class="progress-wrap" title="${done.size} of ${HIKES.length} hiked">
+      <span style="color:var(--green);font-weight:700">✓ ${done.size}/${HIKES.length}</span>
       <span class="progress-bar"><span class="progress-fill" style="width:${pct}%"></span></span>
     </span>
   `;
 }
 
-// ── List render ───────────────────────────────────────────────────────────────
+// ── List ──────────────────────────────────────────────────────────────────────
 function renderList() {
   const filtered = getFiltered();
   updateStats(filtered);
@@ -1006,8 +976,6 @@ function renderList() {
     const badgeClass = h.leash === "off" ? "badge-off" : "badge-on";
     const badgeIcon  = h.leash === "off" ? "🟢" : "🟡";
     const badgeText  = h.leash === "off" ? "Off-Leash" : "On-Leash";
-    const diffClass  = `diff-${h.difficulty}`;
-    const diffLabel  = h.difficulty[0].toUpperCase() + h.difficulty.slice(1);
     const bg         = h.leash === "off"
       ? "linear-gradient(135deg,#c8f0d0,#a8d8b0)"
       : "linear-gradient(135deg,#fdecc8,#f5d08a)";
@@ -1016,10 +984,12 @@ function renderList() {
       : `<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Mark as Hiked`;
 
     return `
-    <article class="card${isDone ? " done" : ""}">
+    <article class="card${isDone ? " done" : ""}" data-name="${h.name.replace(/"/g, '&quot;')}">
       <div class="card-thumb-wrap">
+        <img class="card-thumb-img" alt="${h.name}" />
         <div class="card-thumb-placeholder" style="background:${bg}">${h.emoji}</div>
         <div class="card-done-overlay"><div class="done-stamp">✓ Hiked!</div></div>
+        <div class="photo-credit">© Wikipedia / CC</div>
       </div>
       <div class="card-body">
         <div class="card-header">
@@ -1029,7 +999,7 @@ function renderList() {
         <div class="meta">
           <span>📏 ${h.distance}</span>
           <span>⬆️ ${h.elevation} gain</span>
-          <span class="diff ${diffClass}">${diffLabel}</span>
+          <span class="diff diff-${h.difficulty}">${h.difficulty[0].toUpperCase() + h.difficulty.slice(1)}</span>
         </div>
         <div class="meta">
           <span class="region-pill">📍 ${h.region} · ${h.city}</span>
@@ -1039,9 +1009,11 @@ function renderList() {
       </div>
     </article>`;
   }).join("");
+
+  // Load photos asynchronously after DOM is painted
+  requestAnimationFrame(() => loadCardPhotos(filtered));
 }
 
-// Event delegation for check buttons in list
 document.getElementById("grid").addEventListener("click", e => {
   const btn = e.target.closest(".check-btn");
   if (!btn) return;
@@ -1062,23 +1034,30 @@ function makeIcon(leash, isDone) {
 function popupHTML(h) {
   const isDone    = done.has(h.name);
   const diffLabel = h.difficulty[0].toUpperCase() + h.difficulty.slice(1);
+  const photo     = photoCache[h.wiki];
+  const photoEl   = photo
+    ? `<img src="${photo.url}" class="popup-photo" alt="${h.name}">`
+    : `<div class="popup-photo-placeholder" style="background:${h.leash === "off" ? "linear-gradient(135deg,#c8f0d0,#a8d8b0)" : "linear-gradient(135deg,#fdecc8,#f5d08a)"}">${h.emoji}</div>`;
   const checkIcon = isDone
     ? `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Hiked!`
     : `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Mark as Hiked`;
   return `
-    <div class="popup-body">
-      <div class="popup-region">📍 ${h.region} · ${h.city}</div>
-      <div class="popup-header">
-        <div class="popup-title">${h.emoji} ${h.name}</div>
-        <span class="popup-badge ${h.leash}">${h.leash === "off" ? "🟢 Off-Leash" : "🟡 On-Leash"}</span>
+    <div>
+      ${photoEl}
+      <div class="popup-body">
+        <div class="popup-region">📍 ${h.region} · ${h.city}</div>
+        <div class="popup-header">
+          <div class="popup-title">${h.name}</div>
+          <span class="popup-badge ${h.leash}">${h.leash === "off" ? "🟢 Off-Leash" : "🟡 On-Leash"}</span>
+        </div>
+        <div class="popup-meta">
+          <span>📏 ${h.distance}</span>
+          <span>⬆️ ${h.elevation}</span>
+          <span class="popup-diff diff-${h.difficulty}">${diffLabel}</span>
+        </div>
+        <div class="popup-notes">${h.notes}</div>
+        <button class="popup-check-btn${isDone ? " checked" : ""}" data-name="${h.name.replace(/"/g, '&quot;')}">${checkIcon}</button>
       </div>
-      <div class="popup-meta">
-        <span>📏 ${h.distance}</span>
-        <span>⬆️ ${h.elevation}</span>
-        <span class="popup-diff diff-${h.difficulty}">${diffLabel}</span>
-      </div>
-      <div class="popup-notes">${h.notes}</div>
-      <button class="popup-check-btn${isDone ? " checked" : ""}" data-name="${h.name.replace(/"/g, '&quot;')}">${checkIcon}</button>
     </div>`;
 }
 
@@ -1106,27 +1085,45 @@ function initMap() {
   HIKES.forEach(h => {
     const marker = L.marker([h.lat, h.lng], { icon: makeIcon(h.leash, done.has(h.name)) });
     marker.bindPopup(() => popupHTML(h), { maxWidth: 280 });
-    // Event delegation via popup open
-    marker.on("popupopen", () => {
-      const popup = marker.getPopup();
-      const el    = popup.getElement();
+
+    marker.on("popupopen", async () => {
+      const el = marker.getPopup().getElement();
       if (!el) return;
+
+      // Wire up check button
       const btn = el.querySelector(".popup-check-btn");
-      if (btn) btn.addEventListener("click", () => {
-        toggleDone(h.name);
-        marker.setIcon(makeIcon(h.leash, done.has(h.name)));
-        marker.setPopupContent(popupHTML(h));
-      });
+      if (btn) {
+        btn.addEventListener("click", () => {
+          toggleDone(h.name);
+          marker.setIcon(makeIcon(h.leash, done.has(h.name)));
+          marker.setPopupContent(popupHTML(h));
+        });
+      }
+
+      // Load photo into popup if not yet cached
+      if (h.wiki && !photoCache[h.wiki]) {
+        const photo = await fetchWikiPhoto(h.wiki);
+        if (photo && marker.isPopupOpen()) {
+          const placeholder = el.querySelector(".popup-photo-placeholder");
+          if (placeholder) {
+            const img = document.createElement("img");
+            img.className = "popup-photo";
+            img.alt = h.name;
+            img.src = photo.url;
+            placeholder.replaceWith(img);
+          }
+        }
+      }
     });
+
     markers.push({ hike: h, marker });
   });
 }
 
 function updateMapMarkers() {
-  const filtered    = getFiltered();
+  const filtered = getFiltered();
   const filteredSet = new Set(filtered);
   updateStats(filtered);
-
   markers.forEach(({ hike, marker }) => {
     marker.setIcon(makeIcon(hike.leash, done.has(hike.name)));
     if (filteredSet.has(hike)) {
@@ -1142,7 +1139,6 @@ function setView(view) {
   currentView = view;
   document.getElementById("btn-list").classList.toggle("active", view === "list");
   document.getElementById("btn-map").classList.toggle("active",  view === "map");
-
   if (view === "map") {
     document.getElementById("list-view").classList.add("hidden");
     document.getElementById("map").classList.remove("hidden");
@@ -1155,7 +1151,6 @@ function setView(view) {
   }
 }
 
-// ── Unified update ────────────────────────────────────────────────────────────
 function update() {
   if (currentView === "list") renderList();
   else updateMapMarkers();
@@ -1201,7 +1196,6 @@ document.getElementById("search").addEventListener("input", update);
 document.getElementById("btn-list").addEventListener("click", () => setView("list"));
 document.getElementById("btn-map").addEventListener("click",  () => setView("map"));
 
-// ── Init ──────────────────────────────────────────────────────────────────────
 renderList();
 </script>
 </body>
